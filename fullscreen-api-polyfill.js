@@ -99,17 +99,17 @@
 			// When receiving an internal fullscreenchange event, fulfill the promise
 			function change() {
 				resolve();
-				doc.removeEventListener(api.events.change, change, false);
+				doc.removeEventListener(w3.events.change, change, false);
 			}
 
 			// When receiving an internal fullscreenerror event, reject the promise
 			function error() {
 				reject(new TypeError());
-				doc.removeEventListener(api.events.error, error, false);
+				doc.removeEventListener(w3.events.error, error, false);
 			}
 
-			doc.addEventListener(api.events.change, change, false);
-			doc.addEventListener(api.events.error,  error,  false);
+			doc.addEventListener(w3.events.change, change, false);
+			doc.addEventListener(w3.events.error,  error,  false);
 		};
 	}
 
